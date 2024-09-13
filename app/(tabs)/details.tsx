@@ -14,41 +14,29 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
     <DashboardHeader />
-    <ParallaxScrollView
+    <ScrollView style={styles.area}>
     
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       
-      headerImage={
-        
-        <Image
-          source={{uri:'https://pngimg.com/d/doctor_PNG16021.png'}}
-          style={styles.reactLogo}    
-        />    
-      }>
-      
-      <ThemedView style={styles.titleContainer}>
+      {/* <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-     
+      */}
 
       
       <StatusBar barStyle="dark-content" />
       
       <ScrollView style={styles.scrollContainer}>
+      <Appointments />
         <DashboardStats />
-        <Appointments />
-        <ThemedView style={styles.row}>
-          <PatientInsights />
-          
-        </ThemedView>
-        <Tasks />
+        
+        
       </ScrollView>
    
 
 
 
-    </ParallaxScrollView>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -65,8 +53,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 238,
-    width: 310,
+    height: 178,
+    width: 290,
     bottom: 0,
     left: 0,
     position: 'absolute',
@@ -76,6 +64,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F9FA',
     paddingTop:30,
     marginTop:0
+
+  },
+  area: {
+    flex: 1,
+    
 
   },
   scrollContainer: {
